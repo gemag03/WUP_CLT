@@ -173,3 +173,35 @@ print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
 We expected 8 and we got 8.2. `r sd (my1000$k5)`.
 
 
+
+
+```{r}
+numb = 36
+Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+my1000$k36 = x.avg
+
+
+p <- ggplot(my1000, aes(x=k36),col=sex) + 
+  geom_density() +
+
+# Add mean line
+ geom_vline(aes(xintercept=mean(k9)),
+            color="blue", linetype="dashed", size=1)
+p + ggtitle("n = 36") +
+  xlab("temperature") + ylab(" density")
+
+print(paste('mean = ', mean(my1000$k36),' sd = ',sd(my1000$k36)))
+
+```
+
+
+
+we expect 6 and we got `r sd(my1000$k6)`My expected value was off by a little, it rounds up to 7 with the code.
+
+
+
+
+
+
