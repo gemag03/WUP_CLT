@@ -170,7 +170,6 @@ print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
 
 
 
-
-
+We expected 8 and we got 8.2. `r sd (my1000$k5)`.
 
 
